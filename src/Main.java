@@ -5,7 +5,6 @@ public class Main {
     public static void main(String[] args) {
 //        testLinkedList();
         testDoubleLinkedList();
-//        pruzkum(0);
     }
 
     private static void testLinkedList() {
@@ -45,19 +44,5 @@ public class Main {
         myDoubleLinkedList.getHead();
         myDoubleLinkedList.getTail();
         myDoubleLinkedList.getLength();
-    }
-
-    public static void pruzkum(int hloubka) {
-        System.out.println("Rozhlizim se v hloubce " + hloubka + " m");
-
-        if (hloubka >= 30) {
-            System.out.println("Uz toho bylo dost!");
-
-        } else {
-            System.out.println("Zanoruji se z hloubky " + hloubka + " m");
-            pruzkum(hloubka + 10);
-
-            System.out.println("Vynoruji se na hloubku " + hloubka + " m");
-        }
     }
 }
