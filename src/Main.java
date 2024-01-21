@@ -2,13 +2,32 @@ import eu.davidknotek.linkedlist.MyDoubleLinkedList;
 import eu.davidknotek.linkedlist.MyLinkedList;
 import eu.davidknotek.queue.MyQueue;
 import eu.davidknotek.stack.MyStack;
+import eu.davidknotek.tree.MyBinarySearchTree;
 
 public class Main {
     public static void main(String[] args) {
 //        testLinkedList();
 //        testDoubleLinkedList();
 //        testStack();
-        testQueue();
+//        testQueue();
+        testBinarySearchTree();
+    }
+
+    static void testBinarySearchTree() {
+        MyBinarySearchTree myBinarySearchTree = new MyBinarySearchTree();
+        myBinarySearchTree.insert(15);
+        myBinarySearchTree.insert(3);
+        myBinarySearchTree.insert(7);
+        myBinarySearchTree.insert(23);
+        myBinarySearchTree.insert(18);
+        myBinarySearchTree.insert(43);
+
+        System.out.println(myBinarySearchTree.root.left.right.value);
+        System.out.println(myBinarySearchTree.root.right.left.value);
+        System.out.println(myBinarySearchTree.root.right.right.value);
+
+        System.out.println(myBinarySearchTree.contains(23));
+        System.out.println(myBinarySearchTree.contains(30));
     }
 
     private static void testQueue() {
