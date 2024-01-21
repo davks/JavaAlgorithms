@@ -1,10 +1,44 @@
 import eu.davidknotek.linkedlist.MyDoubleLinkedList;
 import eu.davidknotek.linkedlist.MyLinkedList;
+import eu.davidknotek.queue.MyQueue;
+import eu.davidknotek.stack.MyStack;
 
 public class Main {
     public static void main(String[] args) {
 //        testLinkedList();
-        testDoubleLinkedList();
+//        testDoubleLinkedList();
+//        testStack();
+        testQueue();
+    }
+
+    private static void testQueue() {
+        MyQueue myQueue = new MyQueue();
+        myQueue.enqueue(5);
+        myQueue.enqueue(23);
+        myQueue.enqueue(43);
+
+        System.out.println("Dequeue: " + myQueue.dequeueValue());
+        System.out.println("Dequeue: " + myQueue.dequeueValue());
+//        System.out.println("Dequeue: " + myQueue.dequeueValue());
+
+        myQueue.printList();
+        myQueue.getFirst();
+        myQueue.getLast();
+        myQueue.getLength();
+    }
+
+    private static void testStack() {
+        MyStack myStack = new MyStack();
+        myStack.push(5);
+        myStack.push(23);
+        myStack.push(43);
+        System.out.println("Popped: " + myStack.popValue());
+        System.out.println("Popped: " + myStack.popValue());
+        System.out.println("Popped: " + myStack.popValue());
+
+        myStack.printList();
+        myStack.getTop();
+        myStack.getHeight();
     }
 
     private static void testLinkedList() {
