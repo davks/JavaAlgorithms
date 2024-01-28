@@ -1,8 +1,11 @@
+import eu.davidknotek.hashtable.MyHashTable;
 import eu.davidknotek.linkedlist.MyDoubleLinkedList;
 import eu.davidknotek.linkedlist.MyLinkedList;
 import eu.davidknotek.queue.MyQueue;
 import eu.davidknotek.stack.MyStack;
 import eu.davidknotek.tree.MyBinarySearchTree;
+
+import java.security.Key;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +13,23 @@ public class Main {
 //        testDoubleLinkedList();
 //        testStack();
 //        testQueue();
-        testBinarySearchTree();
+//        testBinarySearchTree();
+        testHashTable();
+    }
+
+    static void testHashTable() {
+        MyHashTable myHashTable = new MyHashTable();
+        myHashTable.set("nails", 100);
+        myHashTable.set("tile", 50);
+        myHashTable.set("lumber", 80);
+        myHashTable.set("bolts", 200);
+        myHashTable.set("screws", 140);
+
+        myHashTable.printTable();
+
+        System.out.println("lumber: " + myHashTable.get("lumber"));
+
+        System.out.println(myHashTable.keys());
     }
 
     static void testBinarySearchTree() {
