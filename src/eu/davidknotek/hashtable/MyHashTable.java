@@ -65,6 +65,27 @@ public class MyHashTable {
         return 0;
     }
 
+    public boolean remove(String key) {
+        int index = hash(key);
+        Node current = dataMap[index];
+        Node previous = null;
+
+        while (current != null) {
+            if (current.key.equals(key)) {
+                if (previous == null) { // First node needs to be removed
+                    dataMap[index] = current.next;
+                } else {
+                    previous.next = current.next;
+                }
+                return true; // Found and removed the node, exit the method
+            }
+            previous = current;
+            current = current.next;
+        }
+        // Key not found in the list at the specified index
+        return false;
+    }
+
     public ArrayList<String> keys() {
         ArrayList<String> keys = new ArrayList<>();
 
