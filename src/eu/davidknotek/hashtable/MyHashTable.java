@@ -34,19 +34,21 @@ public class MyHashTable {
     }
 
     public void set(String key, int value) {
-        int index = hash(key); // get hash (index)
+        if (!changeValue(key, value)) {
+            int index = hash(key); // get hash (index)
 
-        Node newNode = new Node(key, value); // create new node with data
+            Node newNode = new Node(key, value); // create new node with data
 
-        if (dataMap[index] == null) { // if there is no data
-            dataMap[index] = newNode;
-        } else {
-            Node temp = dataMap[index]; // if there is data, get first node
+            if (dataMap[index] == null) { // if there is no data
+                dataMap[index] = newNode;
+            } else {
+                Node temp = dataMap[index]; // if there is data, get first node
 
-            while (temp.next != null) { // go throw nodes until last node
-                temp = temp.next;
+                while (temp.next != null) { // go throw nodes until last node
+                    temp = temp.next;
+                }
+                temp.next = newNode; // add new node
             }
-            temp.next = newNode; // add new node
         }
     }
 
@@ -86,6 +88,12 @@ public class MyHashTable {
         return false;
     }
 
+    public void changeKey(String oldKey, String newKey) {
+        int value = get(oldKey);
+        remove(oldKey);
+        set(newKey, value);
+    }
+
     public ArrayList<String> keys() {
         ArrayList<String> keys = new ArrayList<>();
 
@@ -114,5 +122,19 @@ public class MyHashTable {
             hash = (hash + asciiValue * 23) % dataMap.length; // number 23 is a prime, we can get only 0 to 6
         }
         return hash;
+    }
+
+    private boolean changeValue(String key, int value) {
+        int index = hash(key);
+        Node current = dataMap[index];
+
+        while (current != null) {
+            if (current.key.equals(key)) {
+                current.value = value;
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
     }
 }

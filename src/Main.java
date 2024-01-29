@@ -5,8 +5,6 @@ import eu.davidknotek.queue.MyQueue;
 import eu.davidknotek.stack.MyStack;
 import eu.davidknotek.tree.MyBinarySearchTree;
 
-import java.security.Key;
-
 public class Main {
     public static void main(String[] args) {
 //        testLinkedList();
@@ -25,13 +23,17 @@ public class Main {
         myHashTable.set("bolts", 200);
         myHashTable.set("screws", 140);
 
-        System.out.println(myHashTable.remove("lumber"));
+        System.out.println(myHashTable.remove("tile"));
 
-        myHashTable.printTable();
-
+        myHashTable.set("lumber", 120);
         System.out.println("lumber: " + myHashTable.get("lumber"));
 
+        myHashTable.changeKey("lumber", "wood");
+
+        System.out.println("wood: " + myHashTable.get("wood"));
         System.out.println(myHashTable.keys());
+
+        myHashTable.printTable();
     }
 
     static void testBinarySearchTree() {
