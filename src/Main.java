@@ -1,5 +1,6 @@
 import eu.davidknotek.graph.MyGraph;
 import eu.davidknotek.hashtable.MyHashTable;
+import eu.davidknotek.heap.MyHeap;
 import eu.davidknotek.linkedlist.MyDoubleLinkedList;
 import eu.davidknotek.linkedlist.MyLinkedList;
 import eu.davidknotek.queue.MyQueue;
@@ -14,7 +15,32 @@ public class Main {
 //        testQueue();
 //        testBinarySearchTree();
 //        testHashTable();
-        testGraph();
+//        testGraph();
+        testHeap();
+    }
+
+    private static void testHeap() {
+        MyHeap myHeap = new MyHeap();
+
+        myHeap.insert(95);
+        myHeap.insert(75);
+        myHeap.insert(80);
+        myHeap.insert(55);
+        myHeap.insert(60);
+
+        System.out.println(myHeap.getHeap());
+
+        myHeap.insert(50);
+        System.out.println(myHeap.getHeap());
+
+        myHeap.insert(65);
+        System.out.println(myHeap.getHeap());
+
+        myHeap.remove();
+        System.out.println(myHeap.getHeap());
+
+        myHeap.remove();
+        System.out.println(myHeap.getHeap());
     }
 
     private static void testGraph() {
