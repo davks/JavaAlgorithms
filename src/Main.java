@@ -1,3 +1,4 @@
+import eu.davidknotek.graph.MyGraph;
 import eu.davidknotek.hashtable.MyHashTable;
 import eu.davidknotek.linkedlist.MyDoubleLinkedList;
 import eu.davidknotek.linkedlist.MyLinkedList;
@@ -12,7 +13,32 @@ public class Main {
 //        testStack();
 //        testQueue();
 //        testBinarySearchTree();
-        testHashTable();
+//        testHashTable();
+        testGraph();
+    }
+
+    private static void testGraph() {
+        MyGraph myGraph = new MyGraph();
+
+        myGraph.addVertex("A");
+        myGraph.addVertex("B");
+        myGraph.addVertex("C");
+        myGraph.addVertex("D");
+
+        myGraph.addEdge("A", "B");
+        myGraph.addEdge("A", "C");
+        myGraph.addEdge("A", "D");
+        myGraph.addEdge("B", "D");
+        myGraph.addEdge("C", "D");
+
+
+        System.out.println("\nGraph before removeVertex():");
+        myGraph.printGraph();
+
+        myGraph.removeVertex("D");
+
+        System.out.println("\nGraph after removeVertex():");
+        myGraph.printGraph();
     }
 
     static void testHashTable() {
