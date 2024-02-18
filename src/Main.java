@@ -6,6 +6,7 @@ import eu.davidknotek.linkedlist.MyLinkedList;
 import eu.davidknotek.queue.MyQueue;
 import eu.davidknotek.stack.MyStack;
 import eu.davidknotek.tree.MyBinarySearchTree;
+import eu.davidknotek.tree.MyBinarySearchTreeRecursively;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,9 +15,22 @@ public class Main {
 //        testStack();
 //        testQueue();
 //        testBinarySearchTree();
+        testBinarySearchTreeRecursively();
 //        testHashTable();
 //        testGraph();
-        testHeap();
+//        testHeap();
+    }
+
+    private static void testBinarySearchTreeRecursively() {
+        MyBinarySearchTreeRecursively myBinarySearchTreeRecursively = new MyBinarySearchTreeRecursively();
+        myBinarySearchTreeRecursively.insert(10);
+        myBinarySearchTreeRecursively.insert(5);
+        myBinarySearchTreeRecursively.insert(15);
+
+        myBinarySearchTreeRecursively.delete(10);
+
+        System.out.println(myBinarySearchTreeRecursively.contains(15));
+        System.out.println(myBinarySearchTreeRecursively.contains(10));
     }
 
     private static void testHeap() {
