@@ -22,15 +22,26 @@ public class Main {
     }
 
     private static void testBinarySearchTreeRecursively() {
-        MyBinarySearchTreeRecursively myBinarySearchTreeRecursively = new MyBinarySearchTreeRecursively();
-        myBinarySearchTreeRecursively.insert(10);
-        myBinarySearchTreeRecursively.insert(5);
-        myBinarySearchTreeRecursively.insert(15);
+        MyBinarySearchTreeRecursively myBstr = new MyBinarySearchTreeRecursively();
+        myBstr.insert(47);
+        myBstr.insert(21);
+        myBstr.insert(18);
+        myBstr.insert(27);
+        myBstr.insert(76);
+        myBstr.insert(52);
+        myBstr.insert(82);
+        myBstr.insert(2);
 
-        myBinarySearchTreeRecursively.delete(10);
+        myBstr.delete(2);
 
-        System.out.println(myBinarySearchTreeRecursively.contains(15));
-        System.out.println(myBinarySearchTreeRecursively.contains(10));
+        System.out.println(myBstr.contains(47));
+        System.out.println(myBstr.contains(2));
+
+        // Tree traversal
+        System.out.println(myBstr.bfs()); // bfs Level-order
+        System.out.println(myBstr.dfsPreOrder()); // dfs Pre-order
+        System.out.println(myBstr.dfsPostOrder()); // dfs Post-order
+        System.out.println(myBstr.dfsInOrder()); // dfs In-order
     }
 
     private static void testHeap() {
