@@ -1,3 +1,6 @@
+import eu.davidknotek.algorithms.sorts.BubbleSort;
+import eu.davidknotek.algorithms.sorts.InsertionSort;
+import eu.davidknotek.algorithms.sorts.SelectionSort;
 import eu.davidknotek.graph.MyGraph;
 import eu.davidknotek.hashtable.MyHashTable;
 import eu.davidknotek.heap.MyHeap;
@@ -8,17 +11,49 @@ import eu.davidknotek.stack.MyStack;
 import eu.davidknotek.tree.MyBinarySearchTree;
 import eu.davidknotek.tree.MyBinarySearchTreeRecursively;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
+
+//        testDataStructures();
+        testAlgorithms();
+    }
+
+    private static void testAlgorithms() {
+//        testBubbleSort();
+//        testSelectionSort();
+        testInsertionSort();
+    }
+
+    private static void testDataStructures() {
 //        testLinkedList();
 //        testDoubleLinkedList();
 //        testStack();
 //        testQueue();
 //        testBinarySearchTree();
-        testBinarySearchTreeRecursively();
+//        testBinarySearchTreeRecursively();
 //        testHashTable();
 //        testGraph();
 //        testHeap();
+    }
+
+    private static void testInsertionSort() {
+        int[] myArray = {23, 4, 2, 6, 5, 1, 3};
+        InsertionSort.insertionSort(myArray);
+        System.out.println(Arrays.toString(myArray));
+    }
+
+    private static void testSelectionSort() {
+        int[] myArray = {23, 4, 2, 6, 5, 1, 3};
+        SelectionSort.selectionSort(myArray);
+        System.out.println(Arrays.toString(myArray));
+    }
+
+    private static void testBubbleSort() {
+        int[] myArray = {23, 4, 2, 6, 5, 1, 3};
+        BubbleSort.bubbleSort(myArray);
+        System.out.println(Arrays.toString(myArray));
     }
 
     private static void testBinarySearchTreeRecursively() {
