@@ -1,5 +1,6 @@
 import eu.davidknotek.algorithms.sorts.BubbleSort;
 import eu.davidknotek.algorithms.sorts.InsertionSort;
+import eu.davidknotek.algorithms.sorts.MergeSort;
 import eu.davidknotek.algorithms.sorts.SelectionSort;
 import eu.davidknotek.graph.MyGraph;
 import eu.davidknotek.hashtable.MyHashTable;
@@ -23,7 +24,8 @@ public class Main {
     private static void testAlgorithms() {
 //        testBubbleSort();
 //        testSelectionSort();
-        testInsertionSort();
+//        testInsertionSort();
+        testMergeSort();
     }
 
     private static void testDataStructures() {
@@ -36,6 +38,14 @@ public class Main {
 //        testHashTable();
 //        testGraph();
 //        testHeap();
+    }
+
+    private static void testMergeSort() {
+        int[] array1 = {1, 3, 7, 8};
+        int[] array2 = {2, 4, 5, 6};
+
+        var result = MergeSort.merge(array1, array2);
+        System.out.println(Arrays.toString(result));
     }
 
     private static void testInsertionSort() {
