@@ -1,4 +1,5 @@
 import eu.davidknotek.algorithms.sorts.*;
+import eu.davidknotek.dynamic.FibonnaciSequence;
 import eu.davidknotek.graph.MyGraph;
 import eu.davidknotek.hashtable.MyHashTable;
 import eu.davidknotek.heap.MyHeap;
@@ -9,6 +10,8 @@ import eu.davidknotek.stack.MyStack;
 import eu.davidknotek.tree.MyBinarySearchTree;
 import eu.davidknotek.tree.MyBinarySearchTreeRecursively;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Arrays;
 
 public class Main {
@@ -23,7 +26,8 @@ public class Main {
 //        testSelectionSort();
 //        testInsertionSort();
 //        testMergeSort();
-        testQuickSort();
+//        testQuickSort();
+        testFibonacci();
     }
 
     private static void testDataStructures() {
@@ -36,6 +40,28 @@ public class Main {
 //        testHashTable();
 //        testGraph();
 //        testHeap();
+    }
+
+    private static void testFibonacci() {
+        int n = 103;
+        Instant start = Instant.now();
+        System.out.println("Fib of " + n + ": " + FibonnaciSequence.fib(n));
+        System.out.println("Counter: " + FibonnaciSequence.counter);
+        Instant end = Instant.now();
+        System.out.println("Time: " + (Duration.between(start, end).toSeconds()) + "s");
+
+        Instant start2 = Instant.now();
+        System.out.println("Fib of " + n + ": " + FibonnaciSequence.fibMemo(n));
+        System.out.println("Counter: " + FibonnaciSequence.counterMemo);
+        Instant end2 = Instant.now();
+        System.out.println("Time: " + (Duration.between(start2, end2).toMillis()) + "ms");
+
+        Instant start3 = Instant.now();
+        System.out.println("Fib of " + n + ": " + FibonnaciSequence.fibMemo2(n));
+        System.out.println("Counter: " + FibonnaciSequence.counterMemo2);
+        Instant end3 = Instant.now();
+        System.out.println("Time: " + (Duration.between(start3, end3).toMillis()) + "ms");
+
     }
 
     private static void testQuickSort() {
