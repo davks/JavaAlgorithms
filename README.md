@@ -7,6 +7,7 @@
 - BinarySearchTree
 - Heap
 - Graph
+- AvlTree
 
 ## Algorithms
 - BubbleSort

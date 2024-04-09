@@ -1,4 +1,5 @@
 import eu.davidknotek.algorithms.sorts.*;
+import eu.davidknotek.avltree.MyAvlTree;
 import eu.davidknotek.dynamic.FibonnaciSequence;
 import eu.davidknotek.graph.MyGraph;
 import eu.davidknotek.hashtable.MyHashTable;
@@ -17,8 +18,8 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-//        testDataStructures();
-        testAlgorithms();
+        testDataStructures();
+//        testAlgorithms();
     }
 
     private static void testAlgorithms() {
@@ -27,7 +28,7 @@ public class Main {
 //        testInsertionSort();
 //        testMergeSort();
 //        testQuickSort();
-        testFibonacci();
+//        testFibonacci();
     }
 
     private static void testDataStructures() {
@@ -40,6 +41,19 @@ public class Main {
 //        testHashTable();
 //        testGraph();
 //        testHeap();
+        testAvlTree();
+    }
+
+    private static void testAvlTree() {
+        MyAvlTree myAvlTree = new MyAvlTree();
+        myAvlTree.insert(5, 10, 15, 20);
+//        myAvlTree.insert(10);
+//        myAvlTree.insert(15);
+//        myAvlTree.insert(20);
+        System.out.println(myAvlTree.search(15).height);
+        myAvlTree.levelOrder();
+        myAvlTree.delete(5);
+        myAvlTree.levelOrder();
     }
 
     private static void testFibonacci() {
