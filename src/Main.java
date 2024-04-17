@@ -10,6 +10,7 @@ import eu.davidknotek.queue.MyQueue;
 import eu.davidknotek.stack.MyStack;
 import eu.davidknotek.tree.MyBinarySearchTree;
 import eu.davidknotek.tree.MyBinarySearchTreeRecursively;
+import eu.davidknotek.trie.MyTrie;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -41,7 +42,24 @@ public class Main {
 //        testHashTable();
 //        testGraph();
 //        testHeap();
-        testAvlTree();
+//        testAvlTree();
+        testTrie();
+    }
+
+    private static void testTrie() {
+        MyTrie myTrie = new MyTrie();
+        myTrie.insert("api");
+        myTrie.insert("app");
+        myTrie.insert("apis");
+
+        System.out.println(myTrie.contains("api"));
+        System.out.println(myTrie.contains("app"));
+        System.out.println(myTrie.contains("apis"));
+        System.out.println(myTrie.contains("ap"));
+        System.out.println(myTrie.contains("aph"));
+
+        myTrie.delete("app");
+        System.out.println(myTrie.contains("app"));
     }
 
     private static void testAvlTree() {

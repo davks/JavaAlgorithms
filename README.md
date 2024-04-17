@@ -8,6 +8,7 @@
 - Heap
 - Graph
 - AvlTree
+- Trie
 
 ## Algorithms
 - BubbleSort
